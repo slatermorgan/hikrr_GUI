@@ -9,6 +9,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
 import usePeakSearch from '../hooks/usePeakSearch';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const useStyles = makeStyles({
   inputSearch: {
@@ -115,7 +116,9 @@ const Peaks = () => {
                     }
                 )}
                 <TableRow key="loading-row">
-                    <TableCell>{loading && 'Loading...'}</TableCell>
+                    <TableCell>
+                        <CircularProgress color="primary"/>
+                    </TableCell>
                 </TableRow>
                 <TableRow key="error-row">
                     <TableCell>{error && 'Error'}</TableCell>

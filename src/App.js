@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { Layout, Header, Navigation, Drawer, Content} from 'react-mdl';
+import { Link } from 'react-router-dom';
 import Peaks from './components/peaks';
 
 class App extends Component {
-
     state = {
         peaks: [],
     };
@@ -18,7 +19,28 @@ class App extends Component {
 
     render() {
         return (
-            <Peaks peaks={this.state.peaks} />
+            <div style={{height: '100vh', position: 'relative'}}>
+                <Layout style={{background: 'url(http://www.getmdl.io/assets/demos/transparent.jpg) center / cover'}}>
+                    <Header
+                        transparent title="Welcome to Hikrr"
+                        style={{color: 'white'}}>
+                        <Navigation>
+                            <Link to="/about">About</Link>
+                            <Link to="/contact">Contact</Link>
+                        </Navigation>
+                    </Header>
+                    <Drawer title="Title">
+                        <Navigation>
+                            <Link to="/about">About</Link>
+                            <Link to="/contact">Contact</Link>
+                        </Navigation>
+                    </Drawer>
+                    <Content style={{height: '50%'}}>
+                        <div className="page-content" />
+                        <Peaks peaks={this.state.peaks} />
+                    </Content>
+                </Layout>
+            </div>
         );
     }
 }

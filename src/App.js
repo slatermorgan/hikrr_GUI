@@ -20,10 +20,10 @@ class App extends Component {
     render() {
         return (
             <div style={{height: '100vh', position: 'relative'}}>
-                <Layout style={{background: 'url(http://www.getmdl.io/assets/demos/transparent.jpg) center / cover'}}>
+                <Layout style={{background: 'url() center / cover'}}>
                     <Header
                         transparent title="Welcome to Hikrr"
-                        style={{color: 'white'}}>
+                        style={{color: 'black'}}>
                         <Navigation>
                             <Link to="/about">About</Link>
                             <Link to="/contact">Contact</Link>

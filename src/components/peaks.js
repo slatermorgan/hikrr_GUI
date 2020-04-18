@@ -117,7 +117,10 @@ const Peaks = () => {
                 )}
                 <TableRow key="loading-row">
                     <TableCell>
-                        <CircularProgress color="primary"/>
+                        <div>{
+                            loading &&
+                            <CircularProgress color="primary"/>
+                        }</div>
                     </TableCell>
                 </TableRow>
                 <TableRow key="error-row">

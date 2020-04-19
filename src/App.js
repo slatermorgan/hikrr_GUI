@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Layout, Header, Navigation, Drawer, Content} from 'react-mdl';
 import { Link } from 'react-router-dom';
-import Peaks from './components/peaks';
+import Peaks from './components/peaks/peaks';
 
 class App extends Component {
     state = {

@@ -8,8 +8,9 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
-import usePeakSearch from '../hooks/usePeakSearch';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import usePeakSearch from '../../hooks/usePeakSearch';
+import ErrorRow from '../common/ErrorRow';
+import LoadingRow from '../common/LoadingRow';
 
 const useStyles = makeStyles({
   inputSearch: {
@@ -115,17 +116,8 @@ const Peaks = () => {
                         }
                     }
                 )}
-                <TableRow key="loading-row">
-                    <TableCell>
-                        <div>{
-                            loading &&
-                            <CircularProgress color="primary"/>
-                        }</div>
-                    </TableCell>
-                </TableRow>
-                <TableRow key="error-row">
-                    <TableCell>{error && 'Error'}</TableCell>
-                </TableRow>
+                <LoadingRow loading={loading} />
+                <ErrorRow error={error}/>
             </TableBody>
         </Table>
     </TableContainer>

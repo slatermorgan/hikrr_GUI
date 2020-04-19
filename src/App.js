@@ -19,23 +19,24 @@ class App extends Component {
 
     render() {
         return (
+
             <div style={{height: '100vh', position: 'relative'}}>
-                <Layout style={{background: 'url() center / cover'}}>
-                    <Header
-                        transparent title="Welcome to Hikrr"
-                        style={{color: 'black'}}>
+                <Layout fixedHeader>
+                    <Header title={<span><span style={{ color: '#ddd' }}>Hikrr / </span>Browse Peaks</span>}>
                         <Navigation>
-                            <Link to="/about">About</Link>
-                            <Link to="/contact">Contact</Link>
+                            <a href="#">About</a>
+                            <a href="#">Contact</a>
+                            <a href="#">Missing Peak?</a>
                         </Navigation>
                     </Header>
                     <Drawer title="Title">
                         <Navigation>
-                            <Link to="/about">About</Link>
-                            <Link to="/contact">Contact</Link>
+                            <a href="#">About</a>
+                            <a href="#">Contact</a>
+                            <a href="#">Missing Peak?</a>
                         </Navigation>
                     </Drawer>
-                    <Content style={{height: '50%'}}>
+                    <Content>
                         <div className="page-content" />
                         <Peaks peaks={this.state.peaks} />
                     </Content>

@@ -12,6 +12,7 @@ import usePeakSearch from '../../hooks/usePeakSearch';
 import ErrorRow from '../common/ErrorRow';
 import LoadingRow from '../common/LoadingRow';
 import PeakRow from './PeakRow';
+import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles({
   inputSearch: {
@@ -64,37 +65,49 @@ const Peaks = () => {
 
     return (
 
-    <TableContainer component={Paper}>
-        <div className={classes.inputSearch_Div}>
-            <form className={classes.inputSearch} noValidate autoComplete="off">
-                <TextField
-                    id="outlined-basic"
-                    value={search}
-                    label="Peak Search"
-                    variant="outlined"
-                    style={{width: '95%'}}
-                    onChange={handleSearch}
-                />
-            </form>
-        </div>
+    <Grid container spacing={3}>
+        <Grid item xs={6}>
+            <Paper className={classes.paper}>
+                <TableContainer component={Paper}>
+                    <div className={classes.inputSearch_Div}>
+                        <form className={classes.inputSearch} noValidate autoComplete="off">
+                            <TextField
+                                id="outlined-basic"
+                                value={search}
+                                label="Peak Search"
+                                variant="outlined"
+                                style={{width: '95%'}}
+                                onChange={handleSearch}
+                            />
+                        </form>
+                    </div>
 
-        <Table className={classes.table}>
-            <TableHead>
-                <TableRow>
-                    <TableCell>Peak Name</TableCell>
-                    <TableCell align="right">Height (m)</TableCell>
-                    <TableCell align="right">Region</TableCell>
-                </TableRow>
-            </TableHead>
-            <TableBody>
-                {peaks.map((peak, index) => {
-                    return renderPeakRow(peak, index);
-                })}
-                <LoadingRow loading={loading} />
-                <ErrorRow error={error}/>
-            </TableBody>
-        </Table>
-    </TableContainer>
+                    <Table className={classes.table}>
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>Peak Name</TableCell>
+                                <TableCell align="right">Height (m)</TableCell>
+                                <TableCell align="right">Region</TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {peaks.map((peak, index) => {
+                                return renderPeakRow(peak, index);
+                            })}
+                            <LoadingRow loading={loading} />
+                            <ErrorRow error={error}/>
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+
+            </Paper>
+        </Grid>
+        <Grid item xs={6}>
+            <Paper className={classes.paper}>
+                Map Element Will Go Here
+            </Paper>
+        </Grid>
+    </Grid>
 
     );
 };

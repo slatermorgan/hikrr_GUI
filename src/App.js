@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Layout, Header, Navigation, Drawer, Content} from 'react-mdl';
 import { Link } from 'react-router-dom';
-import Peaks from './components/peaks/peaks';
+import Peaks from './components/peaks/Peaks';
 
 class App extends Component {
     state = {
@@ -22,14 +22,14 @@ class App extends Component {
 
             <div style={{height: '100vh', position: 'relative'}}>
                 <Layout fixedHeader>
-                    <Header title={<span><span style={{ color: '#ddd' }}>Hikrr / </span>Browse Peaks</span>}>
+                    <Header title={<span><span style={{ color: '#ddd' }}></span>Browse Peaks</span>}>
                         <Navigation>
                             <a href="#">About</a>
                             <a href="#">Contact</a>
                             <a href="#">Missing Peak?</a>
                         </Navigation>
                     </Header>
-                    <Drawer title="Title">
+                    <Drawer title="Hikrr">
                         <Navigation>
                             <a href="#">About</a>
                             <a href="#">Contact</a>

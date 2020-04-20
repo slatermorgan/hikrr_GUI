@@ -1,44 +1,41 @@
-import React from 'react';
+import React, { Component } from 'react';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 
-const PeakRow = (options) => {
-    const peak = options.peak;
-    const peaks = options.peaks;
-    const lastPeakElRef = options.lastPeakElRef;
-    console.log(options);
+class PeakRow extends Component {
+    render() {
+        if (this.props.peaks.length === this.props.index + 1) { // last peak
 
-    if (peaks.length === index + 1) { // last peak
+            return (
+                <TableRow ref={this.props.lastPeakElRef} key={this.props.peak.id}>
+                    <TableCell align="left">
+                        {this.props.peak.name}
+                    </TableCell>
+                    <TableCell align="left">
+                        {this.props.peak.metres}
+                    </TableCell>
+                    <TableCell align="left">
+                        {this.props.peak.region}
+                    </TableCell>
+                </TableRow>
+            )
+        } else {
 
-        return (
-            <TableRow ref={lastPeakElRef} key={peak.id}>
-                <TableCell align="left">
-                    {peak.name}
-                </TableCell>
-                <TableCell align="left">
-                    {peak.metres}
-                </TableCell>
-                <TableCell align="left">
-                    {peak.region}
-                </TableCell>
-            </TableRow>
-        )
-    } else {
-
-        return (
-            <TableRow key={peak.id}>
-                <TableCell align="left">
-                    {peak.name}
-                </TableCell>
-                <TableCell align="left">
-                    {peak.metres}
-                </TableCell>
-                <TableCell align="left">
-                    {peak.region}
-                </TableCell>
-            </TableRow>
-        )
+            return (
+                <TableRow key={this.props.peak.id}>
+                    <TableCell align="left">
+                        {this.props.peak.name}
+                    </TableCell>
+                    <TableCell align="left">
+                        {this.props.peak.metres}
+                    </TableCell>
+                    <TableCell align="left">
+                        {this.props.peak.region}
+                    </TableCell>
+                </TableRow>
+            )
+        }
     }
 }
 
-export default PeasRow
+export default PeakRow

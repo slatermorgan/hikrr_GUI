@@ -11,6 +11,7 @@ import TextField from '@material-ui/core/TextField';
 import usePeakSearch from '../../hooks/usePeakSearch';
 import ErrorRow from '../common/ErrorRow';
 import LoadingRow from '../common/LoadingRow';
+import PeakRow from './PeakRow';
 
 const useStyles = makeStyles({
   inputSearch: {
@@ -56,6 +57,11 @@ const Peaks = () => {
         setSkip(1)
     }
 
+    function renderPeakRow(peak, index) {
+            return <PeakRow peak={peak} index={index}
+            peaks={peaks} lastPeakElRef={lastPeakElRef} />
+    }
+
     return (
 
     <TableContainer component={Paper}>
@@ -81,41 +87,9 @@ const Peaks = () => {
                 </TableRow>
             </TableHead>
             <TableBody>
-                {peaks.map((peak, index) =>
-                    {
-                        if (peaks.length === index + 1) { // last peak
-
-                            return (
-                                <TableRow ref={lastPeakElRef} key={peak.id}>
-                                    <TableCell align="left">
-                                        {peak.name}
-                                    </TableCell>
-                                    <TableCell align="left">
-                                        {peak.metres}
-                                    </TableCell>
-                                    <TableCell align="left">
-                                        {peak.region}
-                                    </TableCell>
-                                </TableRow>
-                            )
-                        } else {
-
-                            return (
-                                <TableRow key={peak.id}>
-                                    <TableCell align="left">
-                                        {peak.name}
-                                    </TableCell>
-                                    <TableCell align="left">
-                                        {peak.metres}
-                                    </TableCell>
-                                    <TableCell align="left">
-                                        {peak.region}
-                                    </TableCell>
-                                </TableRow>
-                            )
-                        }
-                    }
-                )}
+                {peaks.map((peak, index) => {
+                    return renderPeakRow(peak, index);
+                })}
                 <LoadingRow loading={loading} />
                 <ErrorRow error={error}/>
             </TableBody>

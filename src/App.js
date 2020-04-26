@@ -8,15 +8,6 @@ class App extends Component {
         peaks: [],
     };
 
-    componentDidMount() {
-        fetch('http://localhost:2999/peaks')
-        .then(res => res.json())
-        .then((data) => {
-            this.setState({peaks: data})
-        })
-        .catch(console.log)
-    }
-
     render() {
         return (
 

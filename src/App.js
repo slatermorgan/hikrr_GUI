@@ -11,12 +11,11 @@ class App extends Component {
 
             <div style={{height: '100vh', position: 'relative'}}>
                 <Layout fixedHeader>
-                    <Header title={<span><span style={{ color: '#ddd' }}></span>Browse Peaks</span>}>
+                    <Header title={<span><span style={{ color: '#ddd' }}></span>Hikrr</span>}>
                         <Navigation>
                             <Link to="/peaks">Peaks</Link>
                             <Link to="/about">About</Link>
                             <Link to="/signup">Sign Up</Link>
-                            <Link to="#">Contact</Link>
                             <Link to="#">Missing Peak?</Link>
                         </Navigation>
                     </Header>

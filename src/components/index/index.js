@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Index = ({ peaks }) => {
+const Index = () => {
     return (
         <h1>Welcome to Hikrr</h1>
     );

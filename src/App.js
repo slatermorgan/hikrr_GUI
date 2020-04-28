@@ -2,11 +2,9 @@ import React, { Component } from 'react';
 import { Layout, Header, Navigation, Drawer, Content} from 'react-mdl';
 import { Link } from 'react-router-dom';
 import Peaks from './components/peaks/Peaks';
+import Main from './components/main';
 
 class App extends Component {
-    state = {
-        peaks: [],
-    };
 
     render() {
         return (
@@ -15,9 +13,11 @@ class App extends Component {
                 <Layout fixedHeader>
                     <Header title={<span><span style={{ color: '#ddd' }}></span>Browse Peaks</span>}>
                         <Navigation>
-                            <a href="#">About</a>
-                            <a href="#">Contact</a>
-                            <a href="#">Missing Peak?</a>
+                            <Link to="/peaks">Peaks</Link>
+                            <Link to="/about">About</Link>
+                            <Link to="/signup">Sign Up</Link>
+                            <Link to="#">Contact</Link>
+                            <Link to="#">Missing Peak?</Link>
                         </Navigation>
                     </Header>
                     <Drawer title="Hikrr">
@@ -28,8 +28,7 @@ class App extends Component {
                         </Navigation>
                     </Drawer>
                     <Content>
-                        <div className="page-content" />
-                        <Peaks peaks={this.state.peaks} />
+                        <Main></Main>
                     </Content>
                 </Layout>
             </div>

@@ -1,15 +1,16 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-
-import Index from './index';
-import Peaks from './peaks';
+import { Switch, Route, withRouter } from 'react-router-dom';
+import Index from './index/index';
+import Peaks from './peaks/Peaks';
+import SignUp from './signup/signup';
 
 const Main = () => (
     <Switch>
-        <Route exact path="/" component={ Index } />
-        <Route path="/peaks" component={ Peaks } />
-        <Route path="/about" component={  } />
-        <Route path="/contact" component={  } />
+        <Route exact path="/" component={ withRouter(Index) } />
+        <Route path="/signup" component={ withRouter(SignUp) } />
+        <Route path="/peaks" component={ withRouter(Peaks) } />
+        <Route path="/about"/>
+        <Route path="/contact"/>
     </Switch>
 );
 

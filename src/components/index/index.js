@@ -19,7 +19,7 @@ const Index = () => {
             <Jumbotron>
                 <h1>Welcome to Hikrr</h1>
                 <p>
-                    The beauty of nature doesn’t need to be hard to find. Our goal is simple - build the largest collection mountain trails, so you can explore the outdoors with confidence. Anytime. Anywhere.
+                    The beauty of nature doesn’t need to be hard to find. Our goal is simple - build the largest collection mountain trails, so you can explore the outdoors with confidence. While on the move.
                 </p>
                 <p>
                     <Button className="m-2" variant="signup">Sign Up</Button>

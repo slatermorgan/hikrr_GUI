@@ -6,8 +6,13 @@ import Col from 'react-bootstrap/Col';
 
 class Index extends Component {
 
+    constructor(props) {
+        super(props);
+        this.that= this;
+    }
+
     navigate(path) {
-        this.props.history.push(path);
+        this.that.props.history.push(path);
     }
 
     render() {

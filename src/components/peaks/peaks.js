@@ -8,9 +8,9 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
-import usePeakSearch from '../../hooks/usePeakSearch';
-import ErrorRow from '../common/ErrorRow';
-import LoadingRow from '../common/LoadingRow';
+import usePeakSearch from '../../Hooks/usePeakSearch';
+import ErrorRow from '../Common/ErrorRow';
+import LoadingRow from '../Common/LoadingRow';
 import PeakRow from './PeakRow';
 import Grid from '@material-ui/core/Grid';
 
@@ -66,7 +66,7 @@ const Peaks = () => {
     return (
 
     <Grid container spacing={3}>
-        <Grid item xs={6}>
+        <Grid item xs={12}>
             <Paper className={classes.paper}>
                 <TableContainer component={Paper}>
                     <div className={classes.inputSearch_Div}>
@@ -102,11 +102,11 @@ const Peaks = () => {
 
             </Paper>
         </Grid>
-        <Grid item xs={6}>
+        {/* <Grid item xs={6}>
             <Paper className={classes.paper}>
                 Map Element Will Go Here
             </Paper>
-        </Grid>
+        </Grid> */}
     </Grid>
 
     );

@@ -1,8 +1,9 @@
 import React from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
-import Index from './index/index';
-import Peaks from './peaks/Peaks';
-import SignUp from './signup/signup';
+
+import Index from '../Index';
+import Peaks from '../Peaks';
+import SignUp from '../Signup';
 
 const Main = () => (
     <Switch>

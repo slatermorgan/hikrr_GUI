@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Layout, Header, Navigation, Drawer, Content} from 'react-mdl';
 import { Link } from 'react-router-dom';
-import Peaks from './components/peaks/Peaks';
-import Main from './components/main';
+import Main from './Components/Main';
+import './App.css';
 
 class App extends Component {
 
@@ -10,8 +10,8 @@ class App extends Component {
         return (
 
             <div style={{height: '100vh', position: 'relative'}}>
-                <Layout fixedHeader>
-                    <Header title={<span><span style={{ color: '#ddd' }}></span>Hikrr</span>}>
+                <Layout className="background-image" style={{background: 'url(https://images.unsplash.com/photo-1539605699249-e37701d294b2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80) center / cover'}}>
+                    <Header transparent title="Hikrr" className="header-colour" style={{color: 'white'}}>
                         <Navigation>
                             <Link to="/peaks">Peaks</Link>
                             <Link to="/about">About</Link>

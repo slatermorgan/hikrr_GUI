@@ -1,8 +1,15 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Jumbotron from 'react-bootstrap/Jumbotron';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const Index = () => {
+
+    // function nextPath(path) {
+    //     this.props.history.push(path);
+    // }
+
     return (
         <>
             <style type="text/css">
@@ -14,25 +21,51 @@ const Index = () => {
                 .btn-browse {
                     background-color: #b53f49;
                 }
-                .jumbotron {
-                    opacity: 0;
+                #jumbotron-main {
+                    background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+                    background: rgba(204, 204, 204, 0);
+                    color: white;
                 }
-                #paragraphText {
-                    width: 28%;
+                .paragraphText {
                     font-size: 1.5rem;
+                    color: white;
+                }
+                #title {
+                    color: white;
+                }
+                #div-btns {
+                    margin-top: 10vh;
                 }
                 `}
             </style>
-            <Jumbotron>
-                <h1>Welcome to Hikrr</h1>
-                <p id="paragraphText">
-                    The beauty of nature doesn’t need to be hard to find. Our goal is simple - build the largest collection mountain trails, so you can explore the outdoors with confidence. While on the move.
-                </p>
-                <p>
-                    <Button className="m-2" variant="signup">Sign Up</Button>
-                    <Button className="m-2" variant="browse">Browse Our Peaks</Button>
-                </p>
-            </Jumbotron>
+            <Row className="">
+                <Col lg="0"></Col>
+                <Col lg="4">
+                    <Jumbotron id="jumbotron-main">
+                        <h1 id="title">Welcome to Hikrr</h1>
+                        <p className="paragraphText">
+                            Beautiful mountains don't need to be hard to find. Our goal is simple - build the largest collection of mountains to climb, so you can explore the outdoors with confidence.
+                        </p>
+                        <div id="div-btns">
+                            <Button
+                                className="m-2"
+                                variant="signup"
+                                // onClick={() => this.nextPath('/signup') }
+                            >
+                                Sign Up
+                            </Button>
+                            <Button
+                                className="m-2"
+                                variant="browse"
+                                // onClick={() => this.nextPath('/peaks') }
+                            >
+                                Browse Our Peaks
+                            </Button>
+                        </div>
+                    </Jumbotron>
+                </Col>
+                <Col lg="8"></Col>
+            </Row>
         </>
 
     );

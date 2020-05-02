@@ -65,8 +65,9 @@ const Peaks = () => {
 
     return (
 
-    <Grid container spacing={3}>
-        <Grid item xs={12}>
+    <Grid container>
+        <Grid item xs={3}></Grid>
+        <Grid item xs={6}>
             <Paper className={classes.paper}>
                 <TableContainer component={Paper}>
                     <div className={classes.inputSearch_Div}>
@@ -81,7 +82,6 @@ const Peaks = () => {
                             />
                         </form>
                     </div>
-
                     <Table className={classes.table}>
                         <TableHead>
                             <TableRow>
@@ -102,6 +102,7 @@ const Peaks = () => {
 
             </Paper>
         </Grid>
+        <Grid item xs={3}></Grid>
         {/* <Grid item xs={6}>
             <Paper className={classes.paper}>
                 Map Element Will Go Here

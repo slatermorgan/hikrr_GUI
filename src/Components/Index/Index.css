@@ -1,0 +1,21 @@
+.btn-signup {
+    background-color: #b53f49;
+}
+.btn-browse {
+    background-color: #b53f49;
+}
+#jumbotron-main {
+    background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+    background: rgba(204, 204, 204, 0);
+    color: white;
+}
+.paragraphText {
+    font-size: 1.5rem;
+    color: white;
+}
+#title {
+    color: white;
+}
+#div-btns {
+    margin-top: 10vh;
+}

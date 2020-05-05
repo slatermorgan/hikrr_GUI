@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import './Index.css';
 
 class Index extends Component {
 
@@ -18,34 +19,7 @@ class Index extends Component {
     render() {
         return (
             <>
-                <style type="text/css">
-                    {`
-                    .btn-signup {
-                        background-color: #b53f49;
-                    }
-
-                    .btn-browse {
-                        background-color: #b53f49;
-                    }
-                    #jumbotron-main {
-                        background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
-                        background: rgba(204, 204, 204, 0);
-                        color: white;
-                    }
-                    .paragraphText {
-                        font-size: 1.5rem;
-                        color: white;
-                    }
-                    #title {
-                        color: white;
-                    }
-                    #div-btns {
-                        margin-top: 10vh;
-                    }
-                    `}
-                </style>
                 <Row className="">
-                    <Col lg="0"></Col>
                     <Col lg="4">
                         <Jumbotron id="jumbotron-main">
                             <h1 id="title">Welcome to Hikrr</h1>
@@ -73,7 +47,6 @@ class Index extends Component {
                     <Col lg="8"></Col>
                 </Row>
             </>
-
         );
     }
 };

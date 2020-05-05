@@ -1,23 +1,24 @@
 import React, {Component } from 'react';
-import { makeStyles, StylesProvider } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-import Button from 'react-bootstrap/Button';
 
-import FormControl from '@material-ui/core/FormControl';
-import Input from '@material-ui/core/Input';
-import InputLabel from '@material-ui/core/InputLabel';
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
+
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const useStyles = {
+    inputSearch: {
+        color: 'red',
+    },
     inputSearch_Div : {
         width: '100vw !important',
         margin: 20,
     },
     login_Grid : {
-        paddingTop: '0vh',
+        paddingTop: '100px',
     },
     login_Div : {
-        height: '25vh',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center'
@@ -28,61 +29,35 @@ class SignUp extends Component {
 
     render()  {
         return (
-            <>
-            <style type="text/css">
-                {`
-                    .btn-signup {
-                        background-color: #b53f49;
-                        width: 100%;
-                        margin: 0;
-                    }
-                `}
-            </style>
-            <Grid container spacing={0} style={useStyles.login_Grid}>
-                <Grid item xs={3} md={4} lg={5}>
-                    <Paper />
-                </Grid>
-                <Grid item xs={6} md={3} lg={2}>
-                    <Paper>
-                        <div className="justify-content-center d-flex">
-                            <h4>Create a Hikrr Account</h4>
-                        </div>
-                        <div style={useStyles.login_Div}>
-                            <form noValidate style={useStyles.form}>
-                                <div>
-                                    <FormControl>
-                                        <InputLabel htmlFor="component-username">Username</InputLabel>
-                                        <Input type="text" id="component-username"/>
-                                    </FormControl>
-                                </div>
-                                <div>
-                                    <FormControl>
-                                        <InputLabel htmlFor="component-password">Password</InputLabel>
-                                        <Input type="password" id="component-password"/>
-                                    </FormControl>
-                                </div>
-                            </form>
-                        </div>
-                        <div className="justify-content-center d-flex">
-                            <small className="text-muted">Already have an account?</small>
-                        </div>
-                        <div className="justify-content-center d-flex">
-                            <small><a href="/signin">Sign in</a></small>
-                        </div>
-                    </Paper>
-                    <Button
-                                    className="mt-2"
-                                    variant="signup"
-                                    onClick={() => this.navigate('/signup') }
-                                >
+                <Container id="box">
+                    <Row>
+                        <Col>
+                            <h4 class="text-center">Start Hiking Today</h4>
+                            <Form>
+                                <Form.Group class="input-field" >
+                                    <Form.Control class="input-field" type="text" placeholder="First Name" />
+                                </Form.Group>
+
+                                <Form.Group class="input-field" >
+                                    <Form.Control class="input-field" type="text" placeholder="Last Name" />
+                                </Form.Group>
+
+                                <Form.Group class="input-field" controlId="formBasicEmail">
+                                    <Form.Control class="input-field" type="email" placeholder="Email" />
+                                </Form.Group>
+
+                                <Form.Group class="input-field" controlId="formBasicPassword">
+                                    <Form.Control type="password" placeholder="Password" />
+                                </Form.Group>
+                                <Button id="button-signup" variant="primary" type="submit">
                                     Sign Up
                                 </Button>
-                </Grid>
-                <Grid item xs={3} md={4} lg={5}>
-                    <Paper />
-                </Grid>
-            </Grid>
-            </>
+                            </Form>
+                            <p class="text-center">Already have an account? <a href="#">Log in</a></p>
+                            <p id="disclaimer">By creating an account you are accepting our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>. We may occasionally send you emails with product updates, and you can unsubscribe at any time.</p>
+                        </Col>
+                    </Row>
+                </Container>
         );
     }
 }

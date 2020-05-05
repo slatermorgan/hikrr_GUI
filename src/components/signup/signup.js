@@ -1,11 +1,11 @@
 import React, {Component } from 'react';
-import { makeStyles, StylesProvider } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
 
-import FormControl from '@material-ui/core/FormControl';
-import Input from '@material-ui/core/Input';
-import InputLabel from '@material-ui/core/InputLabel';
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
+
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const useStyles = {
     inputSearch: {
@@ -29,35 +29,35 @@ class SignUp extends Component {
 
     render()  {
         return (
-            <Grid container spacing={5} style={useStyles.login_Grid}>
-                <Grid item xs={2} md={3}>
-                    <Paper />
-                </Grid>
-                <Grid item xs={8} md={6}>
-                    <Paper>
-                        <div style={useStyles.login_Div}>
-                            <form noValidate>
-                                <div>
-                                    <FormControl>
-                                        <InputLabel htmlFor="component-username">Username</InputLabel>
-                                        <Input type="text" id="component-username"/>
-                                    </FormControl>
-                                </div>
-                                <div>
-                                    <FormControl>
-                                        <InputLabel htmlFor="component-password">Password</InputLabel>
-                                        <Input type="password" id="component-password"/>
-                                    </FormControl>
-                                </div>
-                            </form>
+                <Container id="box">
+                    <Row>
+                        <Col>
+                            <h4 class="text-center">Start Hiking Today</h4>
+                            <Form>
+                                <Form.Group class="input-field" >
+                                    <Form.Control class="input-field" type="text" placeholder="First Name" />
+                                </Form.Group>
 
-                        </div>
-                    </Paper>
-                </Grid>
-                <Grid item xs={2} md={3}>
-                    <Paper />
-                </Grid>
-            </Grid>
+                                <Form.Group class="input-field" >
+                                    <Form.Control class="input-field" type="text" placeholder="Last Name" />
+                                </Form.Group>
+
+                                <Form.Group class="input-field" controlId="formBasicEmail">
+                                    <Form.Control class="input-field" type="email" placeholder="Email" />
+                                </Form.Group>
+
+                                <Form.Group class="input-field" controlId="formBasicPassword">
+                                    <Form.Control type="password" placeholder="Password" />
+                                </Form.Group>
+                                <Button id="button-signup" variant="primary" type="submit">
+                                    Sign Up
+                                </Button>
+                            </Form>
+                            <p class="text-center">Already have an account? <a href="#">Log in</a></p>
+                            <p id="disclaimer">By creating an account you are accepting our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>. We may occasionally send you emails with product updates, and you can unsubscribe at any time.</p>
+                        </Col>
+                    </Row>
+                </Container>
         );
     }
 }

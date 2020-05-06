@@ -5,6 +5,7 @@ import Index from '../Index';
 import Peaks from '../Peaks';
 import Peak from '../Peak';
 import SignUp from '../Signup';
+import Login from '../Login';
 
 const Main = () => (
     <Switch>
@@ -12,6 +13,7 @@ const Main = () => (
         <Route path="/signup" component={ withRouter(SignUp) } />
         <Route exact path="/peaks" component={ withRouter(Peaks) } />
         <Route path="/peaks/:id" children={<Peak/>} />
+        <Route path="/login" component={ withRouter(Login) } />
         <Route path="/about"/>
         <Route path="/contact"/>
     </Switch>

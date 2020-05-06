@@ -1,66 +1,11 @@
-import React, {Component } from 'react';
+import React, {useState} from 'react';
+import SignUpForm from './SignupForm';
 
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
+// https://medium.com/@Zwenza/functional-vs-class-components-in-react-231e3fbd7108
+//https://github.com/codeclassifiers/loginforms
 
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import './Signup.css';
-
-const useStyles = {
-    inputSearch: {
-        color: 'red',
-    },
-    inputSearch_Div : {
-        width: '100vw !important',
-        margin: 20,
-    },
-    login_Grid : {
-        paddingTop: '100px',
-    },
-    login_Div : {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
-    }
+function SignUp (props) {
+    return <SignUpForm/>
 };
-
-class SignUp extends Component {
-
-    render()  {
-        return (
-                <Container id="box">
-                    <Row>
-                        <Col>
-                            <h4 class="text-center">Start Hiking Today</h4>
-                            <Form>
-                                <Form.Group>
-                                    <Form.Control type="text" placeholder="First Name" />
-                                </Form.Group>
-
-                                <Form.Group>
-                                    <Form.Control type="text" placeholder="Last Name" />
-                                </Form.Group>
-
-                                <Form.Group controlId="formBasicEmail">
-                                    <Form.Control type="email" placeholder="Email" />
-                                </Form.Group>
-
-                                <Form.Group controlId="formBasicPassword">
-                                    <Form.Control type="password" placeholder="Password" />
-                                </Form.Group>
-                                <Button id="button-signup" type="submit">
-                                    Sign Up
-                                </Button>
-                            </Form>
-                            <p class="text-center">Already have an account? <a href="/Login">Log in</a></p>
-                            <p class="text-center" id="disclaimer">By creating an account you are accepting our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
-                        </Col>
-                    </Row>
-                </Container>
-        );
-    }
-}
 
 export default SignUp

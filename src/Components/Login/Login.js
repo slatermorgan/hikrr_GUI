@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import './Signup.css';
+import './Login.css';
 
 const useStyles = {
     inputSearch: {
@@ -33,16 +33,8 @@ class SignUp extends Component {
                 <Container id="box">
                     <Row>
                         <Col>
-                            <h4 class="text-center">Start Hiking Today</h4>
+                            <h4 class="text-center">Login To Start Hiking</h4>
                             <Form>
-                                <Form.Group>
-                                    <Form.Control type="text" placeholder="First Name" />
-                                </Form.Group>
-
-                                <Form.Group>
-                                    <Form.Control type="text" placeholder="Last Name" />
-                                </Form.Group>
-
                                 <Form.Group controlId="formBasicEmail">
                                     <Form.Control type="email" placeholder="Email" />
                                 </Form.Group>
@@ -51,11 +43,11 @@ class SignUp extends Component {
                                     <Form.Control type="password" placeholder="Password" />
                                 </Form.Group>
                                 <Button id="button-signup" type="submit">
-                                    Sign Up
+                                    Login
                                 </Button>
                             </Form>
-                            <p class="text-center">Already have an account? <a href="/Login">Log in</a></p>
-                            <p class="text-center" id="disclaimer">By creating an account you are accepting our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+                            <p class="text-center"><a href="#">Forgotten Password? </a></p>
+                            <p class="text-center" id="sign-up">Don't have an account? <a href="/SignUp">Sign Up</a>.</p>
                         </Col>
                     </Row>
                 </Container>

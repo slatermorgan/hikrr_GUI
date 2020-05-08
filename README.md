@@ -1,8 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Description
 
-In the project directory, you can run:
+WIP React App built as a frontend for hikrr_API
 
 ### `npm start`
 

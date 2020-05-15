@@ -23,39 +23,38 @@ function SignUp (props) {
     const sendDetailsToServer = () => {
         if(state.username.length && state.password.length) {
             props.showError(null);
-            const payload={
-                "username":state.username,
-                "password":state.password,
-            }
-            axios.post('http://localhost:3000/auth/signup', payload)
-                .then(function (response) {
-                    if(response.data.code === 200){
-                        setState(prevState => ({
-                            ...prevState,
-                            'successMessage' : 'Registration successful. Redirecting to home page..'
-                        }))
-                        // redirectToHome();
-                        // props.showError(null)
-                    } else{
-                        props.showError("Some error ocurred");
-                    }
-                })
-                .catch(function (error) {
-                    console.log(error);
-                });
+            axios({
+                method: 'POST',
+                url: 'http://localhost:3000/auth/signup',
+                data: { username: state.username, password: state.password},
+            })
+            .then(res => {
+                console.log(res);
+                if(res.status === 201){
+                    setState(prevState => ({
+                        ...prevState,
+                        'successMessage' : 'Registration successful. Redirecting to home page..'
+                    }));
+                    console.log('sign up success');
+                    props.showError(null)
+                    redirectToLogin();
+                } else{
+                    props.showError("Some error ocurred");
+                }
+
+            }).catch(error => {
+                console.log(error);
+            })
         } else {
             props.showError('Please enter valid username and password')
         }
 
     }
 
-    const redirectToHome = () => {
-        props.updateTitle('Home')
-        props.history.push('/home');
-    }
     const redirectToLogin = () => {
-        props.updateTitle('Login')
-        props.history.push('/login');
+        console.log('redirectToLogin');
+        props.updateTitle('Sign in')
+        props.history.push('/signin');
     }
     const handleSubmitClick = (e) => {
         e.preventDefault();

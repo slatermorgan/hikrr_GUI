@@ -8,7 +8,17 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './SignupForm.css';
 
-class SignUp extends Component {
+class SignUpForm extends Component {
+
+    constructor(props) {
+        super(props);
+    }
+
+    redirectToLogin = () => {
+        console.log('redirectToLogin');
+        this.props.updateTitle('Sign in')
+        this.props.history.push('/signin');
+    }
 
     render()  {
         return (
@@ -31,36 +41,68 @@ class SignUp extends Component {
                                     />
                                 </Form.Group>
 
-                                <Form.Group controlId="formBasicEmail">
+                                <Form.Group>
                                     <Form.Control
-                                        type="email"
-                                        placeholder="Email"
+                                        id="username"
+                                        type="username"
+                                        placeholder="Username"
+                                        value={this.props.state.username}
+                                        onChange={this.props.handleChange}
                                     />
                                 </Form.Group>
 
-                                <Form.Group controlId="formBasicPassword">
+                                <Form.Group>
                                     <Form.Control
+                                        id="password"
                                         type="password"
                                         placeholder="Password"
+                                        value={this.props.state.password}
+                                        onChange={this.props.handleChange}
                                     />
                                 </Form.Group>
-                                <Button id="button-signup" type="submit">
+                                <Form.Group>
+                                    <Form.Control
+                                        id="confirmPassword"
+                                        type="password"
+                                        placeholder="Confirm Password"
+                                        value={this.props.state.password}
+                                        onChange={this.props.handleChange}
+                                    />
+                                </Form.Group>
+                                <Button
+                                    id="button-signup"
+                                    type="submit"
+                                    onClick={this.props.handleSubmitClick}
+                                >
                                     Sign Up
                                 </Button>
                             </Form>
+
                             <div class="text-center">
-                            <p>
-                                Already have an account?
-                                <a href="/Login"> Log in</a>
-                            </p>
-                            <medium>
-                                Please use a password unique to Hikrr
-                            </medium>
-                            <p id="disclaimer">
-                                By creating an account you are accepting our
-                                <a href="#"> Terms of Service</a> and
-                                <a href="#"> Privacy Policy</a>.
-                            </p>
+                            <div
+                                className="alert alert-success mt-2"
+                                style={{display: this.props.state.successMessage ? 'block' : 'none' }} role="alert">
+                                {this.props.state.successMessage}
+                            </div>
+                            <div className="mt-2">
+                                <span>Already have an account? </span>
+                                <span
+                                    className="loginText"
+                                    onClick={() =>
+                                    this.redirectToLogin()
+                                }
+                                >
+                                    Login here
+                                </span>
+                            </div>
+                                <medium>
+                                    Please use a password unique to Hikrr
+                                </medium>
+                                <p id="disclaimer">
+                                    By creating an account you are accepting our
+                                    <a href="#"> Terms of Service</a> and
+                                    <a href="#"> Privacy Policy</a>.
+                                </p>
                             </div>
                         </Col>
                     </Row>
@@ -69,4 +111,4 @@ class SignUp extends Component {
     }
 }
 
-export default SignUp
+export default SignUpForm

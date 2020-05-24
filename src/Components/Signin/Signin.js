@@ -36,7 +36,7 @@ class SignUp extends Component {
                             <h4 class="text-center">Login To Start Hiking</h4>
                             <Form>
                                 <Form.Group controlId="formBasicEmail">
-                                    <Form.Control type="email" placeholder="Email" />
+                                    <Form.Control type="text" placeholder="Username" />
                                 </Form.Group>
 
                                 <Form.Group controlId="formBasicPassword">

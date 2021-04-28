@@ -20,8 +20,12 @@ export default function usePeakSearch(search, take, skip) {
         let cancel;
         axios({
             method: 'GET',
-            url: 'http://localhost:2999/peaks',
-            params: { search: search, take: take, skip: skip },
+            url: process.env.REACT_APP_HIKRR_API + '/peaks',
+            params: {
+                search: search,
+                take: take,
+                skip: skip
+            },
             cancelToken: new CancelToken(c => {
                 cancel = c;
             })
